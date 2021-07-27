@@ -1,17 +1,37 @@
 # API de Vendas
+
 Construindo uma API Restful de Vendas Javascript com Node.js, Express, Typescript, TypeORM, Postgres, Redis, Docker etc.
 
-## Instalar dependências
+## Instalar as dependências
 
 ```
 yarn
 ```
 
-Após a instalação execute a aplicação com o comando `yarn dev`.\
-O servidor estará em execução no endereço http://localhost:3333.
+## Criar as tabelas
 
+```
+yarn typeorm migration:run
+```
 
-## Comando para criar o postgres em docker
+## Executar a aplicação
+
+```
+yarn dev
+```
+
+O servidor estará em execução no endereço http://localhost:3333
+
+# Comandos extras
+
+## Criar o postgres no docker
+
 ```
 docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+```
+
+## Criar migration
+
+```
+yarn typeorm migration:create -n CreateTableName
 ```
